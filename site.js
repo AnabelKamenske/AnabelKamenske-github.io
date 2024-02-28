@@ -22,3 +22,34 @@ else if(isEvening){
     div.innerHTML= "Hello Goood Evening!"
 console.log("evening");
 }
+
+
+const p= document.querySelector('#Secret')
+
+const button = document.querySelector('button')
+button.addEventListener('click',()=>{
+    var password = document.querySelector('input').value
+    localStorage.setItem('password', JSON.stringify(password))
+
+const display = password =>{
+        const span = document.createElement('span')
+        span.textContent= password
+        p.append(span)
+    }
+
+    if (password == "It's a secret to everybody."){
+    console.log("password Correct")
+    password= "Secret TUNELLLLLLL - The Blind Moles from Avatar the Last Airbender"
+
+    display(password)
+    }
+    else{
+    console.log("password Incorrect")
+    password ="Incorrect Password"
+
+    display(password)
+    }
+    
+    
+})
+
